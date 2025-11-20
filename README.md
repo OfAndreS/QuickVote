@@ -13,10 +13,10 @@
 <br>
 
 <div align="center">
-  <img src="https://img.shields.io/github/license/OfAndreS/NextBank?style=for-the-badge" alt="Licença">
-  <img src="https://img.shields.io/github/stars/OfAndreS/NextBank?style=for-the-badge" alt="Stars">
-  <img src="https://img.shields.io/github/forks/OfAndreS/NextBank?style=for-the-badge" alt="Forks">
-  <img src="https://img.shields.io/github/last-commit/OfAndreS/NextBank?style=for-the-badge" alt="Último Commit">
+  <img src="https://img.shields.io/github/license/OfAndreS/QuickVote?style=for-the-badge" alt="Licença">
+  <img src="https://img.shields.io/github/stars/OfAndreS/QuickVote?style=for-the-badge" alt="Stars">
+  <img src="https://img.shields.io/github/forks/OfAndreS/QuickVote?style=for-the-badge" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/OfAndreS/QuickVote?style=for-the-badge" alt="Último Commit">
 </div>
 
 <br>
