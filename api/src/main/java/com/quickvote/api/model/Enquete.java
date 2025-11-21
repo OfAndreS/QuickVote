@@ -1,38 +1,74 @@
 package com.quickvote.api.model;
 
-import com.quickvote.api.model.OpcaoVoto;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import java.sql.Time;
-import java.util.ArrayList;
+public class Enquete {
 
-public class Enquete 
-{
-    private String nomeEnquete;
-    private Time duracaoEnquete;
-    private OpcaoVoto vencedorEnquete;
-    private ArrayList<OpcaoVoto> listOfOpcaoVoto = new ArrayList<OpcaoVoto>();
+    private final String id;
+    private final String nome;
+    private final String criador;
+    private final LocalDateTime dataCriacao;
+    private final LocalDateTime dataFim;
+    private final List<OpcaoVoto> opcoes;
 
-    public Enquete(String nomeEnquete, Time duracaoEnquete)
-    {
-        this.nomeEnquete = nomeEnquete;
-        this.duracaoEnquete = duracaoEnquete;
+    public Enquete(String id, String nome, String criador, LocalDateTime dataCriacao, LocalDateTime dataFim, List<OpcaoVoto> opcoes) {
+        this.id = id;
+        this.nome = nome;
+        this.criador = criador;
+        this.dataCriacao = dataCriacao;
+        this.dataFim = dataFim;
+        this.opcoes = opcoes;
     }
 
-    public void addOpcaoVoto()
-    {
-        // Método para Factory OpcaoVoto
-        // Retornar this.listOfOpcaoVoto = this.listOfOpcaoVoto.add()
-        System.out.println("| Método não implementado!");
+    public Enquete(String nome, String criador, int duracaoEmMinutos) {
+        this(
+            UUID.randomUUID().toString(),
+            nome,
+            criador,
+            LocalDateTime.now(),
+            LocalDateTime.now().plusMinutes(duracaoEmMinutos),
+            new CopyOnWriteArrayList<>() // Lista Thread-Safe
+        );
     }
 
-    public String getNomeEnquete()
-    {
-        return this.nomeEnquete;
+    public String getId() {
+        return id;
     }
 
-    public OpcaoVoto getVencedorEnquete()
-    {
-        return this.vencedorEnquete;
+    public String getNome() {
+        return nome;
     }
-    
+
+    public String getCriador() {
+        return criador;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public LocalDateTime getDataFim() {
+        return dataFim;
+    }
+
+    public List<OpcaoVoto> getOpcoes() {
+        return opcoes;
+    }
+
+    /*
+    public StatusEnquete getStatus() {
+        LocalDateTime agora = LocalDateTime.now();
+
+        if (agora.isBefore(dataCriacao)) {
+            return StatusEnquete.NAO_INICIADA;
+        } else if (agora.isAfter(dataFim)) {
+            return StatusEnquete.FINALIZADA;
+        } else {
+            return StatusEnquete.EM_ANDAMENTO;
+        }
+    }
+    */
 }
