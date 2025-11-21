@@ -5,70 +5,79 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Enquete {
+public class Enquete 
+{
 
-    private final String id;
-    private final String nome;
-    private final String criador;
-    private final LocalDateTime dataCriacao;
-    private final LocalDateTime dataFim;
-    private final List<OpcaoVoto> opcoes;
+    private final String idEnquete;
+    private final String nomeEnquete;
+    private final String criadorEnquete;
+    private final LocalDateTime dataCriacaoEnquete;
+    private final LocalDateTime dataFimEnquete;
+    private final List<OpcaoVoto> opcoesEnquete;
 
-    public Enquete(String id, String nome, String criador, LocalDateTime dataCriacao, LocalDateTime dataFim, List<OpcaoVoto> opcoes) {
-        this.id = id;
-        this.nome = nome;
-        this.criador = criador;
-        this.dataCriacao = dataCriacao;
-        this.dataFim = dataFim;
-        this.opcoes = opcoes;
+    public Enquete(String idEnquete, String nomeEnquete, String criadorEnquete, LocalDateTime dataCriacaoEnquete, LocalDateTime dataFimEnquete, List<OpcaoVoto> opcoes) 
+    {
+        this.idEnquete = idEnquete;
+        this.nomeEnquete = nomeEnquete;
+        this.criadorEnquete = criadorEnquete;
+        this.dataCriacaoEnquete = dataCriacaoEnquete;
+        this.dataFimEnquete = dataFimEnquete;
+        this.opcoesEnquete = opcoes;
     }
 
-    public Enquete(String nome, String criador, int duracaoEmMinutos) {
-        this(
-            UUID.randomUUID().toString(),
-            nome,
-            criador,
-            LocalDateTime.now(),
-            LocalDateTime.now().plusMinutes(duracaoEmMinutos),
-            new CopyOnWriteArrayList<>() // Lista Thread-Safe
-        );
+    public Enquete(String nomeEnquete, String criadorEnquete, int duracaoEmMinutos) 
+    {
+        
+        this.idEnquete = UUID.randomUUID().toString();
+        this.nomeEnquete = nomeEnquete;
+        this.criadorEnquete = criadorEnquete;
+        this.dataCriacaoEnquete = LocalDateTime.now();
+        this.dataFimEnquete = LocalDateTime.now().plusMinutes(duracaoEmMinutos);
+        this.opcoesEnquete = new CopyOnWriteArrayList<>();
     }
 
-    public String getId() {
-        return id;
+    public String getId() 
+    {
+        return idEnquete;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome() 
+    {
+        return nomeEnquete;
     }
 
-    public String getCriador() {
-        return criador;
+    public String getCriador() 
+    {
+        return criadorEnquete;
     }
 
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
+    public LocalDateTime getDataCriacao() 
+    {
+        return dataCriacaoEnquete;
     }
 
-    public LocalDateTime getDataFim() {
-        return dataFim;
+    public LocalDateTime getDataFim() 
+    {
+        return dataFimEnquete;
     }
 
-    public List<OpcaoVoto> getOpcoes() {
-        return opcoes;
+    public List<OpcaoVoto> getOpcoes() 
+    {
+        return opcoesEnquete;
     }
 
-    /*
-    public StatusEnquete getStatus() {
+    
+    public StatusEnquete getStatus() 
+    {
         LocalDateTime agora = LocalDateTime.now();
 
-        if (agora.isBefore(dataCriacao)) {
+        if (agora.isBefore(dataCriacaoEnquete)) {
             return StatusEnquete.NAO_INICIADA;
-        } else if (agora.isAfter(dataFim)) {
+        } else if (agora.isAfter(dataFimEnquete)) {
             return StatusEnquete.FINALIZADA;
         } else {
             return StatusEnquete.EM_ANDAMENTO;
         }
     }
-    */
+
 }
