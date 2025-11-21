@@ -13,7 +13,7 @@ public class StatusController {
     {
         Enquete myEnquete = new Enquete("Minha Enquete de Teste", "Dev Adm", 50);
         
-        String outputString = "| Nome da Enquete: " + myEnquete.getNome() + " | Criador da Enquete: " + myEnquete.getCriador() + "|"; 
+        String outputString = "| Nome da Enquete: " + myEnquete.getNome() + " | Criador da Enquete: " + myEnquete.getCriador() + " |"; 
 
         return outputString;
     }
