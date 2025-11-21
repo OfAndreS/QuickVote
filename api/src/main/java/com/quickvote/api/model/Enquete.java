@@ -65,7 +65,6 @@ public class Enquete
     {
         return opcoesEnquete;
     }
-
     
     public StatusEnquete getStatus() 
     {
