@@ -17,12 +17,6 @@
 # -------------------
 # Visual Studio Code
 # -------------------
-.vscode/*
-!.vscode/settings.json    
-!.vscode/tasks.json       # Tarefas de build compartilhadas
-!.vscode/launch.json      # Configurações de Debug compartilhadas
-!.vscode/extensions.json  # Recomendações de extensões (muito importante para seu setup)
-*.code-workspace
 
 # Histórico local (Plugin Local History)
 .history/

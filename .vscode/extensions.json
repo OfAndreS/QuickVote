@@ -1,0 +1,19 @@
+{
+    "recommendations": [
+        "vscjava.vscode-java-debug",
+        "janisdd.vscode-edit-csv",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle",
+        "redhat.java",
+        "vscjava.vscode-lombok",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-java-dependency",
+        "mechatroner.rainbow-csv",
+        "vscjava.vscode-spring-boot-dashboard",
+        "vmware.vscode-boot-dev-pack",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-spring-initializr",
+        "vscjava.vscode-java-test",
+        "rangav.vscode-thunder-client"
+    ]
+}
